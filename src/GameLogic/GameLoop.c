@@ -255,6 +255,7 @@ int main() {
 				x5 = 0;
 			if (x6 > SCREEN_WIDTH)
 				x6 = 0;
+			//Hej
 
 			flushBuffer();
 			PictureReady = 1;
