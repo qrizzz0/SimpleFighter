@@ -53,9 +53,13 @@ int main() {
 	character1->HP = 3;
 	//player1.sprite = 'o';
 	character1->state = WALK1;
-
 	//timer
 	u32 oldCount = counter;
+
+	//Commands
+	char cmd[4] = { 'w', 'c', 'c', 'r' };
+	int cmdcnt = 0;
+
 
 	//Enable vsync interrupt
 	PictureReady = 0;
@@ -138,7 +142,23 @@ int main() {
 			case IDLE4:
 				drawAlphaMappedImage(idle[3], character1->x, character1->y);
 				if (oldCount + 15 <= counter) {
-					character1->state = WALK1;
+					cmdcnt++;
+					character1->state = cmd[cmdcnt];
+					oldCount = counter;
+				}
+				break;
+			case CROUCH1:
+				drawAlphaMappedImage(crouch[0], character1->x, character1->y);
+				if (oldCount + 15 <= counter) {
+					character1->state = CROUCH2;
+					oldCount = counter;
+				}
+				break;
+			case CROUCH2:
+				drawAlphaMappedImage(crouch[1], character1->x, character1->y);
+				if (oldCount + 15 <= counter) {
+					cmdcnt++;
+					character1->state = cmd[cmdcnt];
 					oldCount = counter;
 				}
 				break;
@@ -178,12 +198,14 @@ int main() {
 				character1->x += 1;
 				drawAlphaMappedImage(walk[4], character1->x, character1->y);
 				if (oldCount + 15 <= counter) {
-					character1->state = IDLE1;
+					cmdcnt++;
+					character1->state = cmd[cmdcnt];
 					oldCount = counter;
 				}
 				break;
 
 			case RWALK1:
+				character1->x -= 1;
 				drawAlphaMappedImage(rwalk[0], character1->x, character1->y);
 				if (oldCount + 15 <= counter) {
 					character1->state = RWALK2;
@@ -191,6 +213,7 @@ int main() {
 				}
 				break;
 			case RWALK2:
+				character1->x -= 1;
 				drawAlphaMappedImage(rwalk[1], character1->x, character1->y);
 				if (oldCount + 15 <= counter) {
 					character1->state = RWALK3;
@@ -198,6 +221,7 @@ int main() {
 				}
 				break;
 			case RWALK3:
+				character1->x -= 1;
 				drawAlphaMappedImage(rwalk[2], character1->x, character1->y);
 				if (oldCount + 15 <= counter) {
 					character1->state = RWALK4;
@@ -205,6 +229,7 @@ int main() {
 				}
 				break;
 			case RWALK4:
+				character1->x -= 1;
 				drawAlphaMappedImage(rwalk[3], character1->x, character1->y);
 				if (oldCount + 15 <= counter) {
 					character1->state = RWALK5;
@@ -212,9 +237,11 @@ int main() {
 				}
 				break;
 			case RWALK5:
+				character1->x -= 1;
 				drawAlphaMappedImage(walk[4], character1->x, character1->y);
 				if (oldCount + 15 <= counter) {
-					character1->state = IDLE1;
+					cmdcnt = 0;
+					character1->state = cmd[cmdcnt];
 					oldCount = counter;
 				}
 				break;

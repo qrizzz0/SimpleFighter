@@ -12,7 +12,8 @@
 
 int exists(char inputCmd);
 void execCmd(character* character1, character* character2, char inputCmd);
-void processCmd(character* character1, character* character2, char inputCmd);
+//void processCmd(character* character1, character* character2, char inputCmd);
+void processCmd(character* character1, char inputCmd);
 int hit(character* character1, character* character2);
 
 

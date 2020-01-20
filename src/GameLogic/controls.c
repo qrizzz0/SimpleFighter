@@ -8,7 +8,6 @@
 
 //#define CMD_AMOUNT 10
 
-
 /*character* trackPlayer(){
 
 
@@ -34,17 +33,17 @@ int kick(character* character1, character* character2) {
 	return success;
 }
 /*
-int exists(char inputCmd) {
-	int i, bool = 0;
+ int exists(char inputCmd) {
+ int i, bool = 0;
 
-	for (i = 0; i < CMD_AMOUNT; i++) {
-		if (inputCmd == cmd[i]) {
-			bool = 1;
-			break;
-		}
-	}
-	return bool;
-}*/
+ for (i = 0; i < CMD_AMOUNT; i++) {
+ if (inputCmd == cmd[i]) {
+ bool = 1;
+ break;
+ }
+ }
+ return bool;
+ }*/
 
 void execCmd(character* character1, character* character2, char inputCmd) {
 
@@ -54,7 +53,6 @@ void execCmd(character* character1, character* character2, char inputCmd) {
 		map[character1->x] = '_';
 		character1->x -= 1;
 		map[character1->x] = 'o';
-
 
 		break;
 	case 'd':
@@ -81,7 +79,8 @@ void execCmd(character* character1, character* character2, char inputCmd) {
 		if (hit(character1, character2) == 1) {
 			printf("success!\n");
 			character2->state = STUN;
-			printf("Character%d state = %d\n", character2->player, character2->state);
+			printf("Character%d state = %d\n", character2->player,
+					character2->state);
 		} else {
 			printf("miss\n");
 		}
@@ -110,19 +109,53 @@ void execCmd(character* character1, character* character2, char inputCmd) {
 	case 'b':
 		printf("Blocking\n");
 		character1->state = BLOCK;
-		printf("Character%d state = %d\n", character1->player, character1->state);
+		printf("Character%d state = %d\n", character1->player,
+				character1->state);
 		break;
 	default:
 		break;
 	}
 }
 
-void processCmd(character* character1, character* character2, char inputCmd) {
-	/*if (exists(inputCmd) == 1) {
-	 execCmd(character1, character2, inputCmd);
-	 } else {
-	 //Do nothing
-	 }*/
+//void processCmd(character* character1, character* character2, char inputCmd) {
+/*if (exists(inputCmd) == 1) {
+ execCmd(character1, character2, inputCmd);
+ } else {
+ //Do nothing
+ }*/
 
-	execCmd(character1, character2, inputCmd);
+//execCmd(character1, character2, inputCmd);
+//}
+
+void processCmd(character* character1, char cmd) {
+
+	switch (cmd) {
+	case 'w':
+	character1->state = WALK1;
+	break;
+
+	case 'r':
+	character1->state = RWALK1;
+	break;
+
+	case 'c':
+	character1->state = CROUCH1;
+	break;
+
+	case 'i':
+	character1->state = IDLE1;
+	break;
+
+	case 'p':
+	character1->state = WALK1;
+	break;
+
+	case 'j':
+	character1->state = WALK1;
+	break;
+
+	case 'b':
+	character1->state = WALK1;
+	break;
+	}
 }
