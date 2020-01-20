@@ -4,13 +4,22 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../src/GameLogic/GameLoop.c 
+../src/GameLogic/GameLoop.c \
+../src/GameLogic/animation.c \
+../src/GameLogic/controls.c \
+../src/GameLogic/map.c 
 
 OBJS += \
-./src/GameLogic/GameLoop.o 
+./src/GameLogic/GameLoop.o \
+./src/GameLogic/animation.o \
+./src/GameLogic/controls.o \
+./src/GameLogic/map.o 
 
 C_DEPS += \
-./src/GameLogic/GameLoop.d 
+./src/GameLogic/GameLoop.d \
+./src/GameLogic/animation.d \
+./src/GameLogic/controls.d \
+./src/GameLogic/map.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes

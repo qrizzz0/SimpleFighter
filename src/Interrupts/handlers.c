@@ -10,7 +10,6 @@ XVtc	VtcInst;
 
 u8 vsyncCount;
 u32 fpsCounterCount, fps;
-u32 counter;
 
 
 void VSYNC_Intr_Handler(XVtc *InstancePtr) {

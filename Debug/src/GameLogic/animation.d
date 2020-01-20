@@ -1,14 +1,12 @@
-src/GameLogic/GameLoop.o src/GameLogic/GameLoop.o: \
- ../src/GameLogic/GameLoop.c \
+src/GameLogic/animation.o src/GameLogic/animation.o: \
+ ../src/GameLogic/animation.c ../src/GameLogic/../Media/Graphics.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_printf.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_types.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xparameters.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xparameters_ps.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/bspconfig.h \
- ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_types.h \
- ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xparameters.h \
- ../src/GameLogic/../Media/Graphics.h \
  ../src/GameLogic/../Media/display_ctrl/display_ctrl.h \
+ ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_types.h \
  ../src/GameLogic/../Media/display_ctrl/vga_modes.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xaxivdma.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xaxivdma_hw.h \
@@ -32,17 +30,9 @@ src/GameLogic/GameLoop.o src/GameLogic/GameLoop.o: \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_cache.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xsdps_hw.h \
  ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xplatform_info.h \
- ../src/GameLogic/../Media/SDCard.h \
- ../src/GameLogic/../Interrupts/interrupt_variables.h \
- ../src/GameLogic/../Interrupts/handlers.h \
- ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xgpio.h \
- ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xgpio_l.h \
- ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xscugic.h \
- ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xscugic_hw.h \
- ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_exception.h \
- ../src/GameLogic/../Interrupts/intr_common.h \
- ../src/GameLogic/animation.h ../src/GameLogic/character.h \
- ../src/GameLogic/map.h
+ ../src/GameLogic/character.h ../src/GameLogic/map.h
+
+../src/GameLogic/../Media/Graphics.h:
 
 ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_printf.h:
 
@@ -54,13 +44,9 @@ src/GameLogic/GameLoop.o src/GameLogic/GameLoop.o: \
 
 ../../SimpleFighter_bsp/ps7_cortexa9_0/include/bspconfig.h:
 
-../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_types.h:
-
-../../SimpleFighter_bsp/ps7_cortexa9_0/include/xparameters.h:
-
-../src/GameLogic/../Media/Graphics.h:
-
 ../src/GameLogic/../Media/display_ctrl/display_ctrl.h:
+
+../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_types.h:
 
 ../src/GameLogic/../Media/display_ctrl/vga_modes.h:
 
@@ -107,26 +93,6 @@ src/GameLogic/GameLoop.o src/GameLogic/GameLoop.o: \
 ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xsdps_hw.h:
 
 ../../SimpleFighter_bsp/ps7_cortexa9_0/include/xplatform_info.h:
-
-../src/GameLogic/../Media/SDCard.h:
-
-../src/GameLogic/../Interrupts/interrupt_variables.h:
-
-../src/GameLogic/../Interrupts/handlers.h:
-
-../../SimpleFighter_bsp/ps7_cortexa9_0/include/xgpio.h:
-
-../../SimpleFighter_bsp/ps7_cortexa9_0/include/xgpio_l.h:
-
-../../SimpleFighter_bsp/ps7_cortexa9_0/include/xscugic.h:
-
-../../SimpleFighter_bsp/ps7_cortexa9_0/include/xscugic_hw.h:
-
-../../SimpleFighter_bsp/ps7_cortexa9_0/include/xil_exception.h:
-
-../src/GameLogic/../Interrupts/intr_common.h:
-
-../src/GameLogic/animation.h:
 
 ../src/GameLogic/character.h:
 
